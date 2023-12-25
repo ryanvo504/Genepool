@@ -1,20 +1,12 @@
 # Gene Pool
 
-In this assignment,  you'll build a database program that stores a collection of
+Build a database program that stores a collection of
 people and  their biological relatives.  You can then search this database based
 on the relationships between the people it contains.
 
-The "user interface" logic  is written for you.  The `main.cpp` file handles the
+The `main.cpp` file handles the
 main input-output loop,  and the `Query.*` files handle parsing, validating, and
-executing queries.  You can edit these files for testing, but you shouldn't need
-to.  On Gradescope, your code will be run against the originals.
-
-You'll need to figure out how to best store your data.  Try to make relationship
-queries as easy as possible.  Write the  `GenePool` class and the basic `Person`
-functions first - the things you'll need to read data from a file  and fill your
-database with people.  Then implement the  relationship query  functions  in the
-`Person` class.  As soon as you have some of these done, you can start testing:
-
+executing queries.
 ```
 [iris@olympus genepool]$ ./genepool data/Cunco.tsv
 > Kind's mother
@@ -30,16 +22,6 @@ database with people.  Then implement the  relationship query  functions  in the
  - Northern Dancer
  - Sadlers Wells
 ```
-
-
-## Your Assignment
-
-- Write a `GenePool` class that manages a database of people.
-- Write a `Person` class that supports relationship queries.
-- You **may** use container classes from the standard library.
-- Make sure you don't print anything that isn't explicitly allowed.
-- Make sure you don't have any memory leaks.
-
 
 ### Reading the Data
 
@@ -187,22 +169,3 @@ and paternal grandparent.  Carol would be her own cousin.
 Unknown people (those represented with `???` in the input file)  should never be
 included in the output of any relationship queries.  A query for Alice's parents
 should return the set containing only Eve.
-
-
-## Hints
-
-- Look at all the starter code.  See what's written for you, and how the parts
-  you need to write fit into the existing code.
-- The `std::getline()` function takes an optional third `delimiter` argument -
-  you can use this to parse tab-delimited strings from a `std::istringstream`.
-- You can use `mymap[key] = value` to insert things into a `std::map` (there's
-  an `insert()` function too, but it's a pain to work with).
-- Write stubs for all the relationship functions first, then implement and test
-  them one by one.  It's a lot easier to debug one function than twenty.
-- The `mother()` and `father()` functions should return `nullptr` when that
-  parent is unknown.
-- You can use `for(Person* person: myset)` (also known as a range-based for
-  loop) to iterate over all the people in a set.
-- Think before you start coding!  There are a lot of relationships you need to
-  support, but if you're smart about re-using functions you won't actually have
-  to write much code.
