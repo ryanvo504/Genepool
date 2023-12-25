@@ -1,6 +1,6 @@
 # Gene Pool
 
-Build a database program that stores a collection of
+This is a database program that stores a collection of
 people and  their biological relatives.  You can then search this database based
 on the relationships between the people it contains.
 
@@ -25,7 +25,7 @@ executing queries.
 
 ### Reading the Data
 
-Your program  will be passed one argument on the command line.  This is the path
+This program  will be passed one argument on the command line.  This is the path
 to  a file containing  some genealogical data.  The `main()` function  will open
 this file and pass it as a `std::istream` to your `GenePool` constructor.
 
@@ -51,7 +51,7 @@ file than their parents.
 
 ### Querying the Data
 
-Once you've read in the entire data file,  your program will prompt the user and
+Once you've read in the entire data file,  the program will prompt the user and
 then wait for input, which will come in this format (not all modifiers are valid
 for all relationships; see the next section for details):
 
@@ -66,16 +66,11 @@ for all relationships; see the next section for details):
   `full` or `half`.
 - `relationship` is one of the relationships described in the next section.
 
-Your program should parse the query,  execute it against your database, and then
-print the result, listing the people it found in alphabetical order. If an error
-occurs,  it should print the error message instead.  Finally, it should re-print
+The program parses the query,  executes it against your database, and then
+prints the result, listing the people it has found in alphabetical order. If an error
+occurs,  it will print the error message instead.  Finally, it will re-print
 the prompt and wait for more input.  Repeat this loop until you reach the end of
 the input stream.
-
-The logic  to parse and validate queries  is written for you  (see the `Query.*`
-files), but you'll need to write the functions that do the actual lookups within
-your database (see the `Person.*` files).
-
 
 ## Relationships
 
